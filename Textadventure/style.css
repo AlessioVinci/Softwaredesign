@@ -1,0 +1,37 @@
+body {
+    background-color: #282b30;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    background-color: #282b30;
+}
+
+.item-side {
+    height: 100%;
+    width: 187px;
+    border: 4px;
+    border-radius: 16px;
+    border-color: #1e2124;
+    background-color: #1e2124;
+}
+
+.item-center {
+    flex-grow: 1;
+    padding-top: 42px;
+}
+
+.output {
+    width: 746px;
+    height: 420px;
+    margin: 38px auto;
+    background-color: #1e2124;
+}
+
+.input {
+    width: 746px;
+    height: 140px;
+    margin: auto;
+    background-color: #1e2124;
+}
