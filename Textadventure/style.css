@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'song_of_coronosregular';
+    src: url('Fonts/song_of_coronos-webfont.woff2') format('woff2'), url('Fonts/song_of_coronos-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'keetano_katakanaregular';
+    src: url('Fonts/keetano_katakana-webfont.woff2') format('woff2'), url('Fonts/keetano_katakana-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #282b30;
 }
@@ -26,6 +40,7 @@ body {
     width: 746px;
     height: 420px;
     margin: 38px auto;
+    padding: 21px;
     background-color: #1e2124;
 }
 
@@ -33,5 +48,11 @@ body {
     width: 746px;
     height: 140px;
     margin: auto;
+    padding: 21px;
     background-color: #1e2124;
+}
+
+.text {
+    background-color: #ffffff;
+    font-family: 'song_of_coronosregular';
 }
