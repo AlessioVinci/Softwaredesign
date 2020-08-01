@@ -1,12 +1,12 @@
 namespace Textadventure {
     
     // Room 1 ~ Entrance
-    let creaturesEntrance: Creature[] = [new Creature("BC001", "Dummy", "Wanna test your skills? I'm ready!", 1, true, Number.MAX_SAFE_INTEGER, 0)];
+    let creaturesEntrance: Creature[] = [new Creature("BC001", "Dummy", "Wanna test your skills? I'm ready!", 1, true, Number.MAX_SAFE_INTEGER, 0, "")];
     let entrance: Room = new Room(1, "desc", creaturesEntrance, undefined, 0, 0, 1, 0, 0, 0);
     
 
     // Room 2 ~ Main Hall
-    let creaturesMainHall: Creature[] = [new CreatureAdvanced("AC001", "Undead Wolf", "It's a wolf but undead, duh.", 2, true, 4, 2, "grrrrrrr...", [new Item("I001", "Magic Map", "Shows you an overview of this Dungeon.", 2, 0, 0)])];
+    let creaturesMainHall: Creature[] = [new Creature("BC002", "Undead Wolf", "It's a wolf but undead, duh.", 2, true, 4, 2, "")];
     let mainHall: Room = new Room(2, "desc", creaturesMainHall, undefined, 0, 0, 1, 0, 0, 0);
 
 
@@ -29,8 +29,8 @@ namespace Textadventure {
 
 
     // Room 8 ~ Final Room
-    let allRooms: Room[] = [entrance, mainHall];
-    let allCreatures: Creature[] = creaturesEntrance.concat(creaturesMainHall);
+    export let allRooms: Room[] = [entrance, mainHall];
+    export let allCreatures: Creature[] = creaturesEntrance.concat(creaturesMainHall);
 
 }
 

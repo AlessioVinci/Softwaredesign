@@ -68,7 +68,7 @@ var Textadventure;
     }());
     Textadventure.Room = Room;
     function findRoomById(roomId) {
-        return allRooms.find(function (i) { return i.roomId === roomId; });
+        return Textadventure.allRooms.find(function (i) { return i.roomId === roomId; });
     }
     Textadventure.findRoomById = findRoomById;
 })(Textadventure || (Textadventure = {}));
