@@ -52,7 +52,27 @@ body {
     background-color: #1e2124;
 }
 
-.text {
-    background-color: #ffffff;
+.display {
+    height: 100%;
+    background-color: #f2f2f2;
     font-family: 'song_of_coronosregular';
+}
+
+.text {
+    width: auto;
+    flex-grow: 1;
+    background-color: #7289da;
+}
+
+.enter {
+    width: 140px;
+    margin-right: 0px;
+}
+
+.fa-chevron-right {
+    color: #1e2124;
+}
+
+#run {
+    color: #1e2124;
 }
