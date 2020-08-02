@@ -22,6 +22,12 @@ var Textadventure;
         Item.prototype.getInRoomId = function () {
             return this.inRoomId;
         };
+        Item.prototype.getAtkBonus = function () {
+            return this.atkBonus;
+        };
+        Item.prototype.getHealthBonus = function () {
+            return this.healthBonus;
+        };
         return Item;
     }());
     Textadventure.Item = Item;

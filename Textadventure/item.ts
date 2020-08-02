@@ -33,5 +33,13 @@ namespace Textadventure {
             return this.inRoomId;
         }
 
+        getAtkBonus(): number {
+            return this.atkBonus;
+        }
+
+        getHealthBonus(): number {
+            return this.healthBonus;
+        }
+
     }
 }

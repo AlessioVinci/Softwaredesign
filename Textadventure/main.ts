@@ -36,7 +36,14 @@ namespace Textadventure {
     function evaluateInput(): void {
         console.log("Test");
     }
+
+    document.getElementById("formInput").onkeypress = function (event: KeyboardEvent): void {
+        if (event.keyCode == 13 || event.which == 13) {
+            alert("You are clicked");
+        }
+    }
 }
+
 
 
 

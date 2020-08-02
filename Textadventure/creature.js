@@ -76,7 +76,13 @@ var Textadventure;
             currentRoom.removeCreatureFromRoom(this);
         };
         Creature.prototype.attackPlayer = function () {
-            //do stuff
+            if (Math.round(Math.random() * 100) % 5 == 0) {
+                Textadventure.playerHealth = Textadventure.playerHealth - this.getAtk();
+                if (Textadventure.playerHealth < 0)
+                    Textadventure.playerHealth = 0;
+                console.log(this.getName() + " hit back and dealt you " + this.getAtk() + " damage. \n You have " + Textadventure.playerHealth + " HP left.");
+                Textadventure.checkPlayerStatus();
+            }
         };
         return Creature;
     }());
@@ -104,50 +110,8 @@ var Textadventure;
         return CreatureAdvanced;
     }(Creature));
     Textadventure.CreatureAdvanced = CreatureAdvanced;
-    var Player = /** @class */ (function (_super) {
-        __extends(Player, _super);
-        function Player() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        //Player Functions
-        Player.prototype.help = function () {
-            return "help";
-        };
-        Player.prototype.look = function () {
-            return "I see nothing";
-        };
-        Player.prototype.take = function (pickedItemName) {
-            var itemRoom = Textadventure.findRoomById(this.getInRoomId());
-            var pickedItem = itemRoom.getRoomItems().find(function (i) { return i.getName() === pickedItemName; });
-            itemRoom.removeItemFromRoom(pickedItem);
-            _super.prototype.getInventory.call(this).push(pickedItem);
-        };
-        Player.prototype.inventory = function () {
-            return "list of inventory";
-        };
-        Player.prototype.drop = function (droppedItemName) {
-            var droppedItem = _super.prototype.getInventory.call(this).find(function (i) { return i.getName() === droppedItemName; });
-            _super.prototype.getInventory.call(this).splice(_super.prototype.getInventory.call(this).indexOf(droppedItem));
-            Textadventure.findRoomById(droppedItem.getInRoomId()).addItemToRoom(droppedItem);
-        };
-        Player.prototype.attack = function (target) {
-            getCreatureByName(target).applyDmg(this.getAtk());
-        };
-        Player.prototype.talk = function (target) {
-            return getCreatureByName(target).getDialogue();
-        };
-        Player.prototype.inspect = function (target) {
-            return "You look at the " + getCreatureByName(target).getName() + ". You realize, " + getCreatureByName(target).getDesc()
-                + ". After inspecting it for a while you can see it's current Health (" + getCreatureByName(target).getCurrentHealth()
-                + ") and it's Attack Value (" + getCreatureByName(target).getAtk() + ")";
-        };
-        Player.prototype.quit = function () {
-            //close tab;
-        };
-        return Player;
-    }(CreatureAdvanced));
-    Textadventure.Player = Player;
     function getCreatureByName(targetName) {
         return Textadventure.allCreatures.find(function (i) { return i.getName() === targetName; });
     }
+    Textadventure.getCreatureByName = getCreatureByName;
 })(Textadventure || (Textadventure = {}));

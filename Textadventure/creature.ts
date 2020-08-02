@@ -82,7 +82,12 @@ namespace Textadventure {
         }
 
         attackPlayer(): void {
-            //do stuff
+            if (Math.round(Math.random() * 100) % 5 == 0) {
+                playerHealth = playerHealth - this.getAtk();
+                if (playerHealth < 0) playerHealth = 0;
+                console.log(this.getName() + " hit back and dealt you " + this.getAtk() + " damage. \n You have " + playerHealth + " HP left.");
+                checkPlayerStatus();
+            }
         }
     }
 
@@ -110,56 +115,7 @@ namespace Textadventure {
         }
     }
 
-    export class Player extends CreatureAdvanced {
-
-        //Player Functions
-        help(): string {
-            return "help";
-        }
-
-        look(): string {
-            return "I see nothing";
-        }
-
-        take(pickedItemName: string): void {
-            let itemRoom: Room = findRoomById(this.getInRoomId());
-            let pickedItem: Item = itemRoom.getRoomItems().find(i => i.getName() === pickedItemName);
-            itemRoom.removeItemFromRoom(pickedItem);
-            super.getInventory().push(pickedItem);
-        }
-
-        inventory(): string {
-            return "list of inventory";
-        }
-
-        drop(droppedItemName: string): void {
-            let droppedItem: Item = super.getInventory().find(i => i.getName() === droppedItemName);
-            super.getInventory().splice(super.getInventory().indexOf(droppedItem));
-            findRoomById(droppedItem.getInRoomId()).addItemToRoom(droppedItem);
-        }
-
-        attack(target: string): void {
-            getCreatureByName(target).applyDmg(this.getAtk());
-        }
-
-        talk(target: string): string {
-            return getCreatureByName(target).getDialogue();
-        }
-
-        inspect(target: string): string {
-            return "You look at the " + getCreatureByName(target).getName() + ". You realize, " + getCreatureByName(target).getDesc()
-            + ". After inspecting it for a while you can see it's current Health (" + getCreatureByName(target).getCurrentHealth()
-            + ") and it's Attack Value (" + getCreatureByName(target).getAtk() + ")";
-        }
-
-        quit(): void {
-            //close tab;
-        }
-
-
-    }
-
-    function getCreatureByName(targetName: string): Creature {
+    export function getCreatureByName(targetName: string): Creature {
         return allCreatures.find(i => i.getName() === targetName);
     }
 }

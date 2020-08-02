@@ -20,4 +20,9 @@ var Textadventure;
     function evaluateInput() {
         console.log("Test");
     }
+    document.getElementById("formInput").onkeypress = function (event) {
+        if (event.keyCode == 13 || event.which == 13) {
+            alert("You are clicked");
+        }
+    };
 })(Textadventure || (Textadventure = {}));
