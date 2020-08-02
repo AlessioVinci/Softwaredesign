@@ -61,18 +61,25 @@ body {
 .text {
     width: auto;
     flex-grow: 1;
-    background-color: #7289da;
+    margin: 0px;
 }
 
 .enter {
     width: 140px;
-    margin-right: 0px;
+    padding-top: 1px;
+    background-color: #7289da;
+    border: none;
 }
 
 .fa-chevron-right {
     color: #1e2124;
+    font-size: 80px;
+    margin: 8px 34px;
 }
 
 #run {
     color: #1e2124;
+    margin: 0px 26px;
+    font-size: 36px;
+    font-weight: bold;
 }

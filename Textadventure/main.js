@@ -16,4 +16,8 @@ var Textadventure;
     // Room 8 ~ Final Room
     Textadventure.allRooms = [entrance, mainHall];
     Textadventure.allCreatures = creaturesEntrance.concat(creaturesMainHall);
+    document.getElementById("commandForm").onsubmit = function () { evaluateInput(); };
+    function evaluateInput() {
+        console.log("Test");
+    }
 })(Textadventure || (Textadventure = {}));
